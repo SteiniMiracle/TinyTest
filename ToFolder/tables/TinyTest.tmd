@@ -1,0 +1,37 @@
+table TinyTest
+	lineageTag: b5267a96-7bad-44d9-afc8-615261252142
+	ordinal: 1
+
+	partition TinyTest = M
+		mode: Import
+		expression:=
+			let
+			    Source = #"New Data Source",
+			    Data = Source{[Schema="dbo",Item="TinyTest"]}[Data]
+			in
+			    Data
+
+	column SomeDate
+		dataType: DateTime
+		isDataTypeInferred: false
+		lineageTag: d4eec7cd-aeb6-4cdb-a231-8ec7bcd880ed
+		sourceColumn: SomeDate
+
+	column Product
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 20c50687-a6bd-47c5-9465-8e172f8dddfb
+		sourceColumn: Product
+
+	column Qty
+		dataType: Int64
+		isDataTypeInferred: false
+		lineageTag: ff7e9b81-f8b3-43b5-886e-3f20592b8228
+		sourceColumn: Qty
+
+	column Price
+		dataType: Int64
+		isDataTypeInferred: false
+		lineageTag: 1972ffbc-882c-4311-8ad8-2593dd2aa8e0
+		sourceColumn: Price
+

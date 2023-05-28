@@ -1,0 +1,20 @@
+{
+  "UseWorkspace": true,
+  "WorkspaceConnection": "provider=MSOLAP;data source=Tulum",
+  "WorkspaceDatabase": "TinyTestModel_WorkspaceDB",
+  "DataSourceOverrides": {
+    "New Data Source": {}
+  },
+  "TableImportSettings": {
+    "New Data Source": {
+      "ServerType": "Sql",
+      "Options": {
+        "TrustServerCertificate": "true"
+      },
+      "Server": "Tulum",
+      "Database": "TinyTestDB",
+      "Authentication": "WindowsIntegrated",
+      "Encrypt": true
+    }
+  }
+}

@@ -1,0 +1,6 @@
+dataSource 'New Data Source'
+	connectionDetails:
+		protocol: tds
+	credential:
+		authenticationKind: ServiceAccount
+

@@ -1,0 +1,11 @@
+model TinyTestModel
+	compatibilityLevel: 1600
+	culture: en-US
+	ID: TinyTestModel_WorkspaceDB
+	language: 1033
+	storageLocation: ""
+
+annotation TabularEditor_SerializeOptions = {"IgnoreInferredObjects":true,"IgnoreInferredProperties":true,"IgnoreTimestamps":true,"SplitMultilineStrings":true,"PrefixFilenames":false,"LocalTranslations":true,"LocalPerspectives":true,"LocalRelationships":true,"Levels":["Data Sources","Perspectives","Relationships","Roles","Shared Expressions","Tables","Tables/Calculation Items","Tables/Columns","Tables/Hierarchies","Tables/Measures","Tables/Partitions","Translations"]}
+
+annotation __TEdtr = 1
+

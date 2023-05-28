@@ -1,0 +1,78 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "name": "TinyTestModel",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "New Data Source",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "Tulum",
+            "database": "TinyTestDB"
+          }
+        },
+        "credential": {
+          "AuthenticationKind": "ServiceAccount"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "TinyTest",
+        "lineageTag": "b5267a96-7bad-44d9-afc8-615261252142",
+        "columns": [
+          {
+            "name": "SomeDate",
+            "dataType": "dateTime",
+            "sourceColumn": "SomeDate",
+            "lineageTag": "d4eec7cd-aeb6-4cdb-a231-8ec7bcd880ed"
+          },
+          {
+            "name": "Product",
+            "dataType": "string",
+            "sourceColumn": "Product",
+            "lineageTag": "20c50687-a6bd-47c5-9465-8e172f8dddfb"
+          },
+          {
+            "name": "Qty",
+            "dataType": "int64",
+            "sourceColumn": "Qty",
+            "lineageTag": "ff7e9b81-f8b3-43b5-886e-3f20592b8228"
+          },
+          {
+            "name": "Price",
+            "dataType": "int64",
+            "sourceColumn": "Price",
+            "lineageTag": "1972ffbc-882c-4311-8ad8-2593dd2aa8e0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "TinyTest",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"New Data Source\",",
+                "    Data = Source{[Schema=\"dbo\",Item=\"TinyTest\"]}[Data]",
+                "in",
+                "    Data"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\"IgnoreInferredObjects\":true,\"IgnoreInferredProperties\":true,\"IgnoreTimestamps\":true,\"SplitMultilineStrings\":true,\"PrefixFilenames\":false,\"LocalTranslations\":true,\"LocalPerspectives\":true,\"LocalRelationships\":true,\"Levels\":[\"Data Sources\",\"Perspectives\",\"Relationships\",\"Roles\",\"Shared Expressions\",\"Tables\",\"Tables/Calculation Items\",\"Tables/Columns\",\"Tables/Hierarchies\",\"Tables/Measures\",\"Tables/Partitions\",\"Translations\"]}"
+      }
+    ]
+  }
+}
